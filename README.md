@@ -1,4 +1,4 @@
-# The Amazon S3 TransferManager Sample
+# Image Recognition Demo App for Corrosion Diagnoses
 
 This sample demonstrates the Amazon S3 TransferManager found in the AWS Mobile SDK for iOS.
 
@@ -34,5 +34,18 @@ This sample demonstrates the Amazon S3 TransferManager found in the AWS Mobile S
         let DefaultServiceRegionType = AWSRegionType.Unknown // e.g. AWSRegionType.USEast1
         let CognitoIdentityPoolId = "YourCognitoIdentityPoolId"
         let S3BucketName = "YourS3BucketName"
+        
+1. Extract the full URL of the image you uploaded from your bucket. Important: make sure your AWS bucket creditials are set up for public read permissions.
+
+	let fullUrl = "https://s3.amazonaws.com/{your-bucket-name}/" + uploadRequest.key!	
+`
+1. Incorporate your MetaMind API classifier ID + authentication credentials
+
+        let parameters:[String : AnyObject] = ["classifier_id" : xxxx, "image_url" : fullUrl]
+                        
+        let credentialData = "xxxx".dataUsingEncoding(NSUTF8StringEncoding)!
+        let base64Credentials = credentialData.base64EncodedStringWithOptions([])
+                        
+        let headers = ["Authorization": "Basic xxxx","Content-Type":"application/x-www-form-urlencoded"]
 
 1. Build and run the sample app.
