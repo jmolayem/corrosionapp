@@ -1,3 +1,6 @@
+App Description: http://geegeck.strikingly.com/
+Download App: https://itunes.apple.com/us/app/geegeck/id1076214902?mt=8&ign-mpt=uo%3D4
+
 # Image Recognition Demo App for Corrosion Diagnoses
 
 This sample demonstrates the Amazon S3 TransferManager found in the AWS Mobile SDK for iOS.
